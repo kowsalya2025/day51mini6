@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Add a Movie Review</h2>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    {{ form.movie.label }} {{ form.movie() }}<br>
+    {{ form.rating.label }} {{ form.rating() }}<br>
+    {{ form.comment.label }} {{ form.comment() }}<br>
+    {{ form.submit() }}
+</form>
+<a href="{{ url_for('home') }}">Back to Home</a>
+{% endblock %}

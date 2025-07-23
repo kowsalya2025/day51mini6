@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Movie Review App</title>
+</head>
+<body>
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% for category, message in messages %}
+      <div style="color: {{ 'green' if category == 'success' else 'red' }};">
+        {{ message }}
+      </div>
+    {% endfor %}
+  {% endwith %}
+  <hr>
+  {% block content %}{% endblock %}
+</body>
+</html>
